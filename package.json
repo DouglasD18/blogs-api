@@ -18,6 +18,7 @@
   },
   "main": "src/server.js",
   "scripts": {
+    "exec": "docker exec -it blogs_api bash",
     "prestart": "npx sequelize-cli db:create && npx sequelize-cli db:migrate",
     "start": "node .",
     "start:test": "API_PORT=3030 NODE_ENV=test npm start",
