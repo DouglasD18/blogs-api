@@ -27,10 +27,11 @@ const loginServices = {
         return userExists;
     },
 
-    async createToken({ id, name }) {
+    createToken({ id, name }) {
          const jwtConfig = { expiresIn: '7d', algorithm: 'HS256' };
          const payload = { data: { id, name } };
-         const token = await jwt.sign(payload, secret, jwtConfig);
+         const token = jwt.sign(payload, secret, jwtConfig);
+         console.log(token);
          return token;
     },
 
@@ -39,7 +40,7 @@ const loginServices = {
         if (haveAllFields.code) {
             return haveAllFields;
         }
-        const userExists = await this.verifyUser(body);
+        const userExists = this.verifyUser(body);
         if (userExists.code) {
             return userExists;
         }
