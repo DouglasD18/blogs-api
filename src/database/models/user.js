@@ -11,7 +11,6 @@ const attributes = {
   displayName: {
     type: DataTypes.STRING,
     allowNull: false,
-    field: 'display_name',
   },
   email: {
     type: DataTypes.STRING,
@@ -30,11 +29,14 @@ const attributes = {
 
 /** @param {import('sequelize').Sequelize} sequelize */
 module.exports = (sequelize) => {
-  const user = sequelize.define('User', attributes, { tableName: 'User' });
-  user.associate = (models) => {
-    user.hasMany(models.BlogPosts, {
+  const User = sequelize.define('User', attributes, {
+    tableName: 'Users',
+    timestamps: false,
+  });
+  User.associate = (models) => {
+    User.hasMany(models.BlogPosts, {
         foreignKey: 'userId', as: 'blogposts'
     });
   }
-  return user;
+  return User;
 };
