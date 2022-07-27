@@ -5,11 +5,12 @@ const attributes = {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true
+        allowNull: false,
+        autoIncrement: true,
     },
     name: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
     },
   }
 
@@ -19,6 +20,5 @@ module.exports = (sequelize) => {
       timestamps: false,
       tableName: 'Categories',
     });
-  
     return Category;
   };
