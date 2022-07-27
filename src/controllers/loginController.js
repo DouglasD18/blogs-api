@@ -5,9 +5,9 @@ const loginController = {
         const { body } = req;
         const response = await loginServices.login(body);
         if (response.token) {
-            res.status(response.code).json({ token: response.token });
+            return res.status(response.code).json({ token: response.token });
         }
-        res.status(response.code).json({ message: response.message });
+        return res.status(response.code).json({ message: response.message });
     },
 };
 
