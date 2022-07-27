@@ -6,5 +6,6 @@ const userRoute = Router();
 
 userRoute.post('/', userController.addUser);
 userRoute.get('/', autentication, userController.getAll);
+userRoute.get('/:id', autentication, userController.getById);
 
 module.exports = userRoute;

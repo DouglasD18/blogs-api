@@ -6,14 +6,23 @@ const userController = {
         const response = await userServices.addUser(body);
         if (response.token) {
             const { code, token } = response;
-            res.status(code).json({ token });
+            return res.status(code).json({ token });
         }
         const { code, message } = response;
-        res.status(code).json({ message });
+        return res.status(code).json({ message });
     },
     async getAll(_req, res) {
         const users = await userServices.getAll();
-        res.status(200).json(users);
+        return res.status(200).json(users);
+    },
+    async getById(req, res) {
+        const { id } = req.params;
+        const user = await userServices.getById(id);
+        if (user.code) {
+            const { code, message } = user;
+            return res.status(code).json({ message });
+        }
+        return res.status(200).json(user);
     },
 };
 
