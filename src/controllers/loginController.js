@@ -4,8 +4,10 @@ const loginController = {
     async login(req, res) {
         const { body } = req;
         const response = await loginServices.login(body);
-        const { code, message } = response;
-        res.status(code).json({ message });
+        if (response.token) {
+            res.status(response.code).json({ token: response.token });
+        }
+        res.status(response.code).json({ message: response.message });
     },
 };
 
