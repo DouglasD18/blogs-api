@@ -1,10 +1,46 @@
-# 🚧 README em construção 🚧
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-⚠️ IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+## Backend Project: Blogs API
+This is my blogs project. \o/
+Enjoy It!
+
+
+## Technology 
+
+Here are the technologies used in this project.
+
+* JavaScript
+* NodeJs
+* Express
+* Nodemon
+* Docker
+* MySql
+* Sequelize
+* Joi
+* JWT
+* Dotenv
+
+## Services Used
+
+* Github
+
+## Features
+
+The main features of the application are:
+ - Create an API of a blog
+ - Validate user Login
+ - List and create user
+ - List blog posts
+ - List and create post categories
+
+
+## Links
+
+  - Repository: https://github.com/douglasd18/blogs-api/
+
+## Versioning
+
+  1.0.0
+
+
+## Authors
+
+  * **Douglas Aguiar** 
